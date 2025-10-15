@@ -8,6 +8,14 @@ YouTube's Single Page Application (SPA) behavior often causes the "Video Unavail
 
 
 This extension was created to fully automate the reload process, ensuring seamless video playback without any external scripts or servers.
+## 📦 Releases
+
+For convenience, you can download the pre-built extension directly without building it yourself:
+
+- **Latest CRX Release:** [YouTube Auto-Reload Extension CRX](https://github.com/dev-adalz/YouTube-Auto-Reload-Extension/releases/latest)  
+
+> Simply download the `.crx` file and drag it into your Chrome or Brave browser's Extensions page (`chrome://extensions/` or `brave://extensions/`).  
+> Make sure "Developer mode" is enabled to allow CRX installation.
 
 ## Features
 
