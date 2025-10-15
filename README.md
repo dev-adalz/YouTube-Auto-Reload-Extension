@@ -4,12 +4,11 @@
 
 YouTube's Single Page Application (SPA) behavior often causes the "Video Unavailable" error when clicking videos on the homepage or navigating playlists. This happens because YouTube dynamically loads video content without a full page reload, causing metadata or tokens to desync temporarily. Previously, solutions involved workarounds like using a local server with Flask and `pyautogui` to force F5 reloads.
 
-<img width="1428" height="815" alt="Screenshot from 2025-10-16 03-08-03" src="https://pouch.jumpshare.com/preview/qHJWLDt-CTN7KA6Bl7opV6HeORFHaILfCOfKT_JI0k-NXmJlIMFFpAr2g1ayxRUbGJWfQQqUet537toeYrJwLGT3mtCR3tTfENHP5BWbHQE" />
-
-
 This extension was created to fully automate the reload process, ensuring seamless video playback without any external scripts or servers.
 
-![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/befc6b51-82dc-4c2b-890d-3ccd734acc66)
+## 🎬 Demo: Auto-Reload in Action
+
+![Auto-Reload Demo](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTV4a2ozc2k2amg1YWtrYXkxNXRjdG1rOGFrN2oydWppbWliaHVhdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yyyoqiYu4WTfbrBHF4/giphy.gif)
 
 ## Installation
 
