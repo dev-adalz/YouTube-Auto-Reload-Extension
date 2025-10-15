@@ -11,7 +11,6 @@ This extension was created to fully automate the reload process, ensuring seamle
 ![Auto-Reload Demo](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTV4a2ozc2k2amg1YWtrYXkxNXRjdG1rOGFrN2oydWppbWliaHVhdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yyyoqiYu4WTfbrBHF4/giphy.gif)
 
 
-![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/aebda5b1-47bb-4f93-95ed-807be3e405c3)
 
 ## Installation
 
@@ -20,6 +19,9 @@ This extension was created to fully automate the reload process, ensuring seamle
 3. Enable **Developer Mode**.
 4. Click **Load unpacked** and select the folder containing this extension.
 5. Enjoy automatic YouTube reload functionality.
+
+![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/aebda5b1-47bb-4f93-95ed-807be3e405c3)
+
 
 ## Features
 
