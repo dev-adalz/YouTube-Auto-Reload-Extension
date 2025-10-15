@@ -9,6 +9,8 @@ YouTube's Single Page Application (SPA) behavior often causes the "Video Unavail
 
 This extension was created to fully automate the reload process, ensuring seamless video playback without any external scripts or servers.
 
+![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/befc6b51-82dc-4c2b-890d-3ccd734acc66)
+
 ## Installation
 
 1. Download the source code of this extension.
