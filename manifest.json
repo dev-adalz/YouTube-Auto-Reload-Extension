@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Auto Refresh Fix",
+  "version": "1.0",
+  "description": "Automatically reloads the YouTube tab when a new video is clicked to fix the 'Video Unavailable' issue.",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
+
