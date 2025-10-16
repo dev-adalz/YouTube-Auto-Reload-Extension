@@ -15,7 +15,6 @@
 ## Motivation
 
 YouTube's Single Page Application (SPA) behavior often causes the "Video Unavailable" error when clicking videos on the homepage or navigating playlists. This happens because YouTube dynamically loads video content without a full page reload, causing metadata or tokens to desync temporarily. Previously, solutions involved workarounds like using a local server with Flask and `pyautogui` to force F5 reloads.
-
 This extension was created to fully automate the reload process, ensuring seamless video playback without any external scripts or servers.
 
 ## 🎬 Demo: Auto-Reload in Action
@@ -24,11 +23,87 @@ This extension was created to fully automate the reload process, ensuring seamle
 
 ## Installation
 
-1. Download the source code of this extension.
-2. Open Brave/Chrome and navigate to `chrome://extensions/`.
-3. Enable **Developer Mode**.
-4. Click **Load unpacked** and select the folder containing this extension.
-5. Enjoy automatic YouTube reload functionality.
+## Installation Guide (for Non-Technical Users)
+
+Follow these steps carefully — you’ll have the extension up and running in minutes:
+
+---
+
+### **Step 1: Download the Extension**
+
+1. Go to the [YouTube Auto Reload Extension v1.1](https://github.com/dev-adalz/YouTube-Auto-Reload-Extension/tree/v-1.1) page on GitHub.
+2. Click the **“Code”** button (usually green).
+3. Select **Download ZIP**.
+4. Once downloaded, locate the file on your computer (usually in the **Downloads** folder).
+5. **Extract** the ZIP file to a folder — right-click → **Extract All…** (Windows) or double-click on Mac.
+
+> 💡 Tip: Remember where you extracted the folder — you’ll need it in Step 4.
+
+---
+
+### **Step 2: Open the Extensions Page in Your Browser**
+
+The steps differ slightly depending on your browser:
+
+* **Chrome / Brave / Edge (Chromium-based browsers)**:
+
+  1. Open your browser.
+  2. Type `chrome://extensions/` (or `edge://extensions/` for Edge) in the address bar and press Enter.
+
+You should see a page that lists your installed extensions.
+
+---
+
+### **Step 3: Enable Developer Mode**
+
+1. On the **top-right corner** of the extensions page, look for a toggle labeled **Developer mode**.
+2. Turn it **ON**.
+
+> ✅ This allows you to install extensions that are not from the official Chrome Web Store.
+
+---
+
+### **Step 4: Load the Extension**
+
+1. Click the **Load unpacked** button.
+2. A file picker will open — navigate to the folder where you extracted the extension in Step 1.
+3. Select the **entire folder** (the one containing `manifest.json`) and click **Select Folder**.
+
+---
+
+### **Step 5: Verify the Extension is Installed**
+
+* You should now see **“YouTube Auto Reload Extension”** listed among your extensions.
+* Make sure it is **enabled** (toggle switch is ON).
+
+---
+
+### **Step 6: Use the Extension**
+
+1. Open **YouTube** in the same browser.
+2. When you click a video or navigate playlists:
+
+   * If a video shows **“Video Unavailable”**, the extension will automatically reload the tab.
+3. You can also open the extension popup (click the puzzle piece → select the extension) to:
+
+   * Toggle **Fast Reload** ON/OFF.
+   * See the **reload counter** for analytics.
+
+---
+
+### **Supported Browsers**
+
+* Chrome
+* Brave
+* Edge (Chromium-based)
+* Firefox (with slight limitations)
+
+---
+
+### **Extra Tips**
+
+* If the extension doesn’t seem to work at first, **refresh the YouTube page** once.
+* Keep your **ad blocker enabled** if you want an ad-free experience — the extension works alongside it.
 
 ![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/aebda5b1-47bb-4f93-95ed-807be3e405c3)
 
