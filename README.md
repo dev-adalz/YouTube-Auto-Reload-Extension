@@ -20,7 +20,7 @@ This extension was created to fully automate the reload process, ensuring seamle
 
 ## 🎬 Demo: Auto-Reload in Action
 
-![Auto-Reload Demo](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTV4a2ozc2k2amg1YWtrYXkxNXRjdG1rOGFrN2oydWppbWliaHVhdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yyyoqiYu4WTfbrBHF4/giphy.gif)
+![Screencastfrom2025-10-1621-33-26-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/afa48c9a-563e-4cf2-8643-103c43bf6be5)
 
 ## Installation
 
