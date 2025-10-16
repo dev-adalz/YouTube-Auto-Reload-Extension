@@ -1,4 +1,16 @@
-# YouTube Auto Reload Extension
+# YouTube Auto Reload Extension v1.1
+
+## Changelog
+
+**v1.1 Updates:**
+
+* Added **Fast Reload toggle** — users can enable or disable automatic reloads.
+* Added **Reload Counter** — tracks the number of videos successfully reloaded from "Video Unavailable".
+* Improved SPA detection and stability for YouTube navigation.
+* Simplified video ID tracking; removed playlist index tracking to prevent reload errors.
+* Minor bug fixes and performance improvements.
+
+---
 
 ## Motivation
 
@@ -10,8 +22,6 @@ This extension was created to fully automate the reload process, ensuring seamle
 
 ![Auto-Reload Demo](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTV4a2ozc2k2amg1YWtrYXkxNXRjdG1rOGFrN2oydWppbWliaHVhdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yyyoqiYu4WTfbrBHF4/giphy.gif)
 
-
-
 ## Installation
 
 1. Download the source code of this extension.
@@ -22,19 +32,21 @@ This extension was created to fully automate the reload process, ensuring seamle
 
 ![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/aebda5b1-47bb-4f93-95ed-807be3e405c3)
 
-
 ## Features
 
 * Automatically reloads YouTube videos that show "Video Unavailable".
+* Fast Reload toggle: enable or disable auto-reload as needed.
+* Tracks the number of videos successfully reloaded (reload counter) for analytics.
 * No need for a local server or Python scripts.
 * Works directly as a Chrome/Brave extension.
 * Fully automatic; no manual refresh required.
 * Lightweight and minimal; no icons or extra resources needed.
 
-
 ## How It Works
 
 The extension monitors video playback events and automatically triggers a reload whenever YouTube fails to load a video due to SPA inconsistencies. It works directly in the same tab without focusing or opening new windows.
+
+> **Limitation:** Clicking the current video in a playlist may not trigger a reload because the video ID does not change. This is a rare scenario, and typical usage involves navigating to new videos. Future updates may address this edge case.
 
 ## Future Updates
 
@@ -42,4 +54,4 @@ The extension monitors video playback events and automatically triggers a reload
 
 ---
 
-Created with 💛 for smoother YouTube viewing.
+Created with 💛 by dev-adalz for smoother YouTube viewing.
