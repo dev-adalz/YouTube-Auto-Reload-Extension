@@ -1,13 +1,17 @@
 // Use browser API if available (Firefox), otherwise chrome API
 const browserAPI = typeof browser !== "undefined" ? browser : chrome;
 
-// Reload listener
-browserAPI.runtime.onMessage.addListener((msg, sender) => {
-  if (msg.action === "reloadYT" && sender.tab?.id) {
-    console.log("🔄 Reloading YouTube tab:", sender.tab.id);
-    browserAPI.tabs.reload(sender.tab.id);
+browserAPI.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+  if (msg.action === "reloadYT") {
+    browserAPI.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs[0]) {
+        console.log("🔄 Reloading active YouTube tab:", tabs[0].id);
+        browserAPI.tabs.reload(tabs[0].id);
+      }
+    });
   }
 });
+
 
 // Reload all open YouTube tabs once
 function reloadAllYouTubeTabs() {
