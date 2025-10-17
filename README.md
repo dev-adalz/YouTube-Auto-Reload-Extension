@@ -11,6 +11,8 @@
 * Minor bug fixes and performance improvements.
 * **Cross-browser support added** — works on all Chromium-based browsers (Chrome, Edge, Brave, Opera) and Mozilla Firefox.
 * Note: Safari is not supported.
+* **Installation guides updated** — Installation guides for chromium based browsers and mozilla has been updated separatedly on [Installation](#installation)
+ for better support.
 ---
 
 ## Motivation
