@@ -1,25 +1,31 @@
+// Use chrome API by default, fallback to browser API if available
+const api = chrome || browser;
+
 let lastVideoId = new URL(window.location.href).searchParams.get("v") || "";
 let reloadCounter = 0;
 
 // Load counter from storage
-chrome.storage.local.get(["reloadCounter"], (data) => {
+api.storage.local.get(["reloadCounter"], (data) => {
   reloadCounter = data.reloadCounter || 0;
   console.log("📊 Videos saved from 'Video Unavailable':", reloadCounter);
 });
 
 // Reload function
 function reloadVideo() {
-  chrome.runtime.sendMessage({ action: "reloadYT" });
+  api.runtime.sendMessage({ action: "reloadYT" });
   reloadCounter++;
-  chrome.storage.local.set({ reloadCounter });
+  api.storage.local.set({ reloadCounter });
   console.log("🔄 Reload triggered for video:", lastVideoId);
   console.log("📊 Total videos saved:", reloadCounter);
 }
 
 // Fast Reload toggle helper
 async function checkFastReload() {
-  const { fastReload } = await chrome.storage.sync.get(["fastReload"]);
-  return fastReload ?? true;
+  return new Promise((resolve) => {
+    api.storage.sync.get(["fastReload"], (data) => {
+      resolve(data.fastReload ?? true);
+    });
+  });
 }
 
 // SPA-safe video detection (existing)
@@ -49,11 +55,10 @@ window.addEventListener("popstate", detectVideoChange);
 setInterval(detectVideoChange, 1000);
 
 // Fast Reload toggle
-chrome.storage.onChanged.addListener((changes, area) => {
+api.storage.onChanged.addListener((changes, area) => {
   if (area === "sync" && changes.fastReload) {
     const enabled = changes.fastReload.newValue;
     console.log(`[YouTube Auto Refresh] Fast Reload is now ${enabled ? "ON" : "OFF"}`);
     if (enabled) detectVideoChange(); // reload current video if needed
   }
 });
-
