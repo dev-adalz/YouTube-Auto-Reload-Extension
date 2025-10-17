@@ -1,15 +1,16 @@
-# YouTube Auto Reload Extension v1.1
+# YouTube Auto Reload Extension v1.2
 
 ## Changelog
 
-**v1.1 Updates:**
+**v1.2 Updates:**
 
 * Added **Fast Reload toggle** — users can enable or disable automatic reloads.
 * Added **Reload Counter** — tracks the number of videos successfully reloaded from "Video Unavailable".
 * Improved SPA detection and stability for YouTube navigation.
 * Simplified video ID tracking; removed playlist index tracking to prevent reload errors.
 * Minor bug fixes and performance improvements.
-
+* **Cross-browser support added** — works on all Chromium-based browsers (Chrome, Edge, Brave, Opera) and Mozilla Firefox.
+* Note: Safari is not supported.
 ---
 
 ## Motivation
@@ -23,15 +24,12 @@ This extension was created to fully automate the reload process, ensuring seamle
 
 ## Installation
 
-## Installation Guide (for Non-Technical Users)
-
-Follow these steps carefully — you’ll have the extension up and running in minutes:
-
----
+<details>
+<summary>📌 Installation Guide for Chromium-Based Browsers (Chrome, Edge, Brave, Opera)</summary>
 
 ### **Step 1: Download the Extension**
 
-1. Go to the [YouTube Auto Reload Extension v1.1](https://github.com/dev-adalz/YouTube-Auto-Reload-Extension/tree/v-1.1) page on GitHub.
+1. Go to the [YouTube Auto Reload Extension v1.2](https://github.com/dev-adalz/YouTube-Auto-Reload-Extension) page on GitHub.
 2. Click the **“Code”** button (usually green).
 3. Select **Download ZIP**.
 4. Once downloaded, locate the file on your computer (usually in the **Downloads** folder).
@@ -41,25 +39,20 @@ Follow these steps carefully — you’ll have the extension up and running in m
 
 ---
 
-### **Step 2: Open the Extensions Page in Your Browser**
+### **Step 2: Open the Extensions Page**
 
-The steps differ slightly depending on your browser:
-
-* **Chrome / Brave / Edge (Chromium-based browsers)**:
-
-  1. Open your browser.
-  2. Type `chrome://extensions/` (or `edge://extensions/` for Edge) in the address bar and press Enter.
-
+1. Open your browser.  
+2. Type `chrome://extensions/` (for Chrome/Brave/Opera) or `edge://extensions/` (for Edge) in the address bar and press Enter.  
 You should see a page that lists your installed extensions.
 
 ---
 
 ### **Step 3: Enable Developer Mode**
 
-1. On the **top-right corner** of the extensions page, look for a toggle labeled **Developer mode**.
+1. On the **top-right corner** of the extensions page, look for a toggle labeled **Developer mode**.  
 2. Turn it **ON**.
 
-> ✅ This allows you to install extensions that are not from the official Chrome Web Store.
+> ✅ This allows you to install extensions that are not from the official Web Store.
 
 ---
 
@@ -73,21 +66,61 @@ You should see a page that lists your installed extensions.
 
 ### **Step 5: Verify the Extension is Installed**
 
-* You should now see **“YouTube Auto Reload Extension”** listed among your extensions.
+* You should now see **“YouTube Auto Reload Extension”** listed among your extensions.  
 * Make sure it is **enabled** (toggle switch is ON).
 
 ---
 
 ### **Step 6: Use the Extension**
 
-1. Open **YouTube** in the same browser.
+1. Open **YouTube** in the same browser.  
 2. When you click a video or navigate playlists:
-
-   * If a video shows **“Video Unavailable”**, the extension will automatically reload the tab.
+   * If a video shows **“Video Unavailable”**, the extension will automatically reload the tab.  
 3. You can also open the extension popup (click the puzzle piece → select the extension) to:
-
-   * Toggle **Fast Reload** ON/OFF.
+   * Toggle **Fast Reload** ON/OFF.  
    * See the **reload counter** for analytics.
+
+</details>
+
+<details>
+<summary>📌 Installation Guide for Firefox</summary>
+
+### **Step 1: Download the Extension**
+
+1. Go to the [YouTube Auto Reload Extension v1.2](https://github.com/dev-adalz/YouTube-Auto-Reload-Extension) page on GitHub.
+2. Click the **“Code”** button and select **Download ZIP**.
+3. Locate the ZIP file and **extract** it to a folder.
+
+---
+
+### **Step 2: Open Firefox Add-ons Page**
+
+1. Open Firefox.  
+2. Type `about:debugging#/runtime/this-firefox` in the address bar and press Enter.
+
+---
+
+### **Step 3: Load Temporary Add-on**
+
+1. Click **“Load Temporary Add-on…”**  
+2. Navigate to the folder where you extracted the extension.  
+3. Select the **`manifest.json`** file.  
+
+> ⚠️ Temporary add-ons will be removed when Firefox is restarted. You can repeat this process to reload it.
+
+---
+
+### **Step 4: Use the Extension**
+
+1. Open **YouTube** in Firefox.  
+2. When a video shows **“Video Unavailable”**, the extension will automatically reload the tab.  
+3. Use the extension popup to:
+   * Toggle **Fast Reload** ON/OFF.  
+   * See the **reload counter**.
+
+</details>
+
+![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/aebda5b1-47bb-4f93-95ed-807be3e405c3)
 
 ---
 
@@ -105,7 +138,6 @@ You should see a page that lists your installed extensions.
 * If the extension doesn’t seem to work at first, **refresh the YouTube page** once.
 * Keep your **ad blocker enabled** if you want an ad-free experience — the extension works alongside it.
 
-![Screencast from 2025-10-16 03-53-02](https://github.com/user-attachments/assets/aebda5b1-47bb-4f93-95ed-807be3e405c3)
 
 ## Features
 
