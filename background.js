@@ -1,36 +1,30 @@
-// Use browser API if available (Firefox), otherwise chrome API
-const browserAPI = typeof browser !== "undefined" ? browser : chrome;
-
-browserAPI.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg.action === "reloadYT") {
-    browserAPI.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      if (tabs[0]) {
-        console.log("🔄 Reloading active YouTube tab:", tabs[0].id);
-        browserAPI.tabs.reload(tabs[0].id);
-      }
-    });
+// Reload listener (existing)
+chrome.runtime.onMessage.addListener((msg, sender) => {
+  if (msg.action === "reloadYT" && sender.tab?.id) {
+    console.log("🔄 Reloading YouTube tab:", sender.tab.id);
+    chrome.tabs.reload(sender.tab.id);
   }
 });
 
-
 // Reload all open YouTube tabs once
 function reloadAllYouTubeTabs() {
-  browserAPI.tabs.query({ url: "*://www.youtube.com/*" }, (tabs) => {
+  chrome.tabs.query({ url: "*://www.youtube.com/*" }, (tabs) => {
     for (const tab of tabs) {
-      browserAPI.tabs.reload(tab.id);
+      chrome.tabs.reload(tab.id);
       console.log("🔄 Reloading existing YouTube tab:", tab.id);
     }
   });
 }
 
 // Fast Reload toggle listener
-browserAPI.storage.onChanged.addListener((changes, area) => {
+chrome.storage.onChanged.addListener((changes, area) => {
   if (area === "sync" && changes.fastReload && changes.fastReload.newValue) {
-    reloadAllYouTubeTabs();
+    reloadAllYouTubeTabs(); // smooth reload, content.js runs naturally
   }
 });
 
 // Reload all tabs on install
-browserAPI.runtime.onInstalled.addListener(() => {
+chrome.runtime.onInstalled.addListener(() => {
   reloadAllYouTubeTabs();
 });
+
