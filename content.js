@@ -1,35 +1,37 @@
+// Use browser API if available (Firefox), otherwise chrome API
+const browserAPI = typeof browser !== "undefined" ? browser : chrome;
+
 let lastVideoId = new URL(window.location.href).searchParams.get("v") || "";
 let reloadCounter = 0;
 
 // Load counter from storage
-chrome.storage.local.get(["reloadCounter"], (data) => {
+browserAPI.storage.local.get(["reloadCounter"]).then((data) => {
   reloadCounter = data.reloadCounter || 0;
   console.log("📊 Videos saved from 'Video Unavailable':", reloadCounter);
 });
 
 // Reload function
 function reloadVideo() {
-  chrome.runtime.sendMessage({ action: "reloadYT" });
+  browserAPI.runtime.sendMessage({ action: "reloadYT" });
   reloadCounter++;
-  chrome.storage.local.set({ reloadCounter });
+  browserAPI.storage.local.set({ reloadCounter });
   console.log("🔄 Reload triggered for video:", lastVideoId);
   console.log("📊 Total videos saved:", reloadCounter);
 }
 
 // Fast Reload toggle helper
 async function checkFastReload() {
-  const { fastReload } = await chrome.storage.sync.get(["fastReload"]);
-  return fastReload ?? true;
+  const data = await browserAPI.storage.sync.get(["fastReload"]);
+  return data.fastReload ?? true;
 }
 
-// SPA-safe video detection (existing)
+// SPA-safe video detection
 function detectVideoChange() {
   const currentVideoId = new URL(window.location.href).searchParams.get("v");
   if (!currentVideoId) return;
-
+  
   checkFastReload().then((enabled) => {
     if (!enabled) return;
-
     if (currentVideoId !== lastVideoId) {
       lastVideoId = currentVideoId;
       reloadVideo();
@@ -49,10 +51,10 @@ window.addEventListener("popstate", detectVideoChange);
 setInterval(detectVideoChange, 1000);
 
 // Fast Reload toggle
-chrome.storage.onChanged.addListener((changes, area) => {
+browserAPI.storage.onChanged.addListener((changes, area) => {
   if (area === "sync" && changes.fastReload) {
     const enabled = changes.fastReload.newValue;
     console.log(`[YouTube Auto Refresh] Fast Reload is now ${enabled ? "ON" : "OFF"}`);
-    if (enabled) detectVideoChange(); // reload current video if needed
+    if (enabled) detectVideoChange();
   }
 });
